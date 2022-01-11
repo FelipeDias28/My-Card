@@ -14,6 +14,7 @@ class MyCard extends StatelessWidget {
         backgroundColor: Colors.deepOrange,
         body: SafeArea(
             child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CircleAvatar(
               backgroundImage: AssetImage('imagens/bonecos.jpg'),
@@ -28,67 +29,65 @@ class MyCard extends StatelessWidget {
                 fontFamily: 'Pacifico',
               ),
             ),
-            const Text(
+            Text(
               "Desenvolvedor Flutter",
               style: TextStyle(
                 fontSize: 20.0,
                 fontFamily: "Source Sans Pro",
-                color: Colors.white,
+                color: Colors.deepOrange.shade100,
                 letterSpacing: 2.5, // Aumenta a distância entre as letras
               ),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(
-                vertical: 10.0,
-                horizontal: 25.0,
-              ),
-              padding: const EdgeInsets.all(10.0),
-              color: Colors.white,
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.phone,
-                    size: 25.0,
-                    color: Colors.deepOrange,
-                  ),
-                  SizedBox(width: 10.0), // Dar espaço entre os Widgets
-                  Text(
-                    "+55 14 99710-1478",
-                    style: TextStyle(
-                      color: Colors.deepOrange,
-                      fontSize: 20.0,
-                      fontFamily: "Source Sans Pro",
-                    ),
-                  ),
-                ],
+            SizedBox(
+              height: 20.0,
+              width: 250.0,
+              child: Divider(
+                color: Colors.deepOrange.shade100,
+                thickness: 1.0,
               ),
             ),
-            Container(
-              margin: const EdgeInsets.symmetric(
+            const Card(
+              margin: EdgeInsets.symmetric(
                 vertical: 10.0,
                 horizontal: 25.0,
               ),
-              padding: const EdgeInsets.all(10.0),
-              color: Colors.white,
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.email,
-                    size: 25.0,
+              child: ListTile(
+                leading: Icon(
+                  Icons.phone,
+                  size: 25.0,
+                  color: Colors.deepOrange,
+                ),
+                title: Text(
+                  "+55 14 99710-1478",
+                  style: TextStyle(
                     color: Colors.deepOrange,
+                    fontFamily: "Source Sans Pro",
+                    fontSize: 20.0,
                   ),
-                  SizedBox(width: 10.0), // Dar espaço entre os Widgets
-                  Text(
-                    "adfelipealmeida@gmail.com",
-                    style: TextStyle(
-                      color: Colors.deepOrange,
-                      fontSize: 20.0,
-                      fontFamily: "Source Sans Pro",
-                    ),
-                  ),
-                ],
+                ),
               ),
-            )
+            ),
+            const Card(
+              margin: EdgeInsets.symmetric(
+                vertical: 10.0,
+                horizontal: 25.0,
+              ),
+              child: ListTile(
+                leading: Icon(
+                  Icons.mail,
+                  size: 25.0,
+                  color: Colors.deepOrange,
+                ),
+                title: Text(
+                  "email@emil.com",
+                  style: TextStyle(
+                    color: Colors.deepOrange,
+                    fontFamily: "Source Sans Pro",
+                    fontSize: 20.0,
+                  ),
+                ),
+              ),
+            ),
           ],
         )),
       ),
